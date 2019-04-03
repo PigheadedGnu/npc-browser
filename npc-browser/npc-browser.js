@@ -201,7 +201,7 @@ class NPCBrowser extends Application {
                             type = type.split('(')[0].trim();
                             if (typesArr.includes(type) === false) typesArr.push(type);
                             if (typesArr.includes(subype) === false) typesArr.push(subype);
-                        } else if (type !== undefined && type !== '' && typesArr.includes(type) === false) {
+                        } else if (type !== undefined && type !== '' && typesArr.includes(type.trim()) === false) {
                             typesArr.push(type.trim());
                         }
                         npcs[npc._id] = npc;
@@ -475,20 +475,20 @@ class NPCBrowser extends Application {
                 let targetStat = '';
                 let operation = '';
                 if (targetValue.indexOf(':') != -1) {
-                    targetValue = string.split(':')[1].trim();
-                    targetStat = string.split(':')[0].trim();
+                    targetStat = targetValue.split(':')[0].trim();
+                    targetValue = targetValue.split(':')[1].trim();
                     operation = ':';
                 } else if (targetValue.indexOf('=') != -1) {
-                    targetValue = string.split('=')[1].trim();
-                    targetStat = string.split('=')[0].trim();
+                    targetStat = targetValue.split('=')[0].trim();
+                    targetValue = targetValue.split('=')[1].trim();
                     operation = '=';
                 } else if (targetValue.indexOf('<') != -1) {
-                    targetValue = string.split('<')[1].trim();
-                    targetStat = string.split('<')[0].trim();
+                    targetStat = targetValue.split('<')[0].trim();
+                    targetValue = targetValue.split('<')[1].trim();
                     operation = '<';
                 } else if (targetValue.indexOf('>') != -1) {
-                    targetValue = string.split('>')[1].trim();
-                    targetStat = string.split('>')[0].trim();
+                    targetStat = targetValue.split('>')[0].trim();
+                    targetValue = targetValue.split('>')[1].trim();
                     operation = '>';
                 } 
                 if (operation == '') {
@@ -501,7 +501,7 @@ class NPCBrowser extends Application {
                     for (let sectionId in npc.data.data) {
                         let section = npc.data.data[sectionId];
                         for (let attributeId in section) {
-                            if (targetStat == attributeId || targetStat == section[attributeId].label) {
+                            if (targetStat == attributeId || targetStat == section[attributeId].label.toLowerCase()) {
                                 foundAttribute = true;
                                 let attributeValue = section[attributeId].value;
                                 if (typeof attributeValue == 'string') {
@@ -522,7 +522,9 @@ class NPCBrowser extends Application {
                         }
                         if (foundAttribute == true) break;
                     }
-                    if (!foundAttribute) return false;
+                    if (!foundAttribute) {
+                        return false;
+                    }
                 }
             }
         }

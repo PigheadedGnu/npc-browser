@@ -77,7 +77,7 @@
     width:40%;
     padding-left:5px;
 }
-#levelfilter dt, #classfilter dt, #schoolfilter dt {
+#levelfilter dt, #typefilter dt {
     width:10%;
 }
 
@@ -86,7 +86,7 @@
     width:58%;
     margin-left:0;
 }
-#levelfilter dd, #classfilter dd, #schoolfilter dd  {
+#levelfilter dd, #typefilter dd  {
     width:88%;
 }
 
