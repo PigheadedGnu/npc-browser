@@ -1,4 +1,4 @@
-# npc-browser
+# NPC Browser
 A way to browse compendium NPCs and sort/filter them with various filters.
 
 ![example](preview.jpg)
