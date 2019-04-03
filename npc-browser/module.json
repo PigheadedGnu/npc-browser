@@ -1,0 +1,11 @@
+{
+	"name": "npc-browser",
+	"title": "NPC Browser",
+	"description": "A way to browse NPC and sort/filter them with various filters.",
+	"version": "0.1",
+	"author": "Felix aka syl3r86",
+	"systems": ["dnd5e"],
+	"scripts": ["./npc-browser.js"],
+	"styles": ["./npc-browser.css"],
+	"packs": []
+}

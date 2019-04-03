@@ -1,0 +1,174 @@
+/*  core foundry changes  */
+#compendium.flexcolumn.active {
+    display: flex;
+    flex-direction: column;
+}
+#compendium.flexcolumn > .directory-list {
+    width: 100%;
+    height: auto;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+#compendium.flexcolumn > .directory-footer {
+    height: auto;
+}
+#compendium.flexcolumn > .directory-footer > * {
+    margin-top: 5px;
+}
+
+#compendium.flexcolumn .npc-browser-btn {
+    margin-left:2%;
+    margin-right:0;
+}
+
+#compendium .directory-footer {
+    display:block;
+}
+
+/*  npcbrowser  */
+/*  resizing  */
+.npc-browser-window {
+    resize:both;
+    overflow:auto;
+    min-width:600px;
+    min-height:350px;
+    max-width:1100px;
+    max-height:90vh;
+}
+
+.npc-browser {
+    display:flex;
+    min-height:100px;
+}
+
+.npc-browser-window .window-content {
+    overflow-y: hidden!important;
+}
+
+/*  filter area */
+.npc-browser .control-area {
+    position:sticky;
+    display: block;
+    min-width: 250px;
+    width: 300px;
+    padding-right:5px;
+    overflow:auto;
+}
+
+.npc-browser .filtercontainer {    
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding:2px;
+}
+
+.npc-browser .filtercontainer h3 {
+    margin:0;
+    cursor:pointer;
+}
+
+
+.npc-browser dl {
+    margin: 5px 0;
+}
+
+.npc-browser dt {
+    display:inline-block;
+    width:40%;
+    padding-left:5px;
+}
+#levelfilter dt, #classfilter dt, #schoolfilter dt {
+    width:10%;
+}
+
+.npc-browser dd {
+    display:inline-block;
+    width:58%;
+    margin-left:0;
+}
+#levelfilter dd, #classfilter dd, #schoolfilter dd  {
+    width:88%;
+}
+
+.npc-browser dd select {
+    width:100%;
+}
+
+.npc-browser #tagfilter input {
+    width:100%;
+    height:1.6em;
+}
+.npc-browser .small-select {
+    width: 40px;
+    height: 1.6em;
+    padding: 0;
+    border-radius:0;
+    border-color:rgb(238,238,238);
+}
+.npc-browser .small-input {
+    width: 90px!important;
+}
+
+.npc-browser .hint {
+    font-size: 12px;   
+    border: 1px solid #00ff0547;
+    border-radius: 5px;
+    padding:3px;
+}
+
+/*  npc list  */
+.npc-browser ul {
+    float:right;
+    display: block;
+    min-width: 335px;
+    width: 785px;
+    margin:0;
+    height: 100%;
+    overflow:auto;
+}
+
+.npc-browser .npc {
+    cursor:default;
+    vertical-align: middle;
+    line-height:64px;
+    margin:4px 0;
+}
+
+.npc-browser .npc-image {
+    max-width: 64px;
+    height: 64px;
+}
+.npc-browser .npc-image img {
+    width: 64px;
+    height: 64px;
+    border: none;
+}
+
+.npc-browser .npc-line {
+    line-height: 25px;
+    padding: 9px 0 5px 5px;
+}
+.npc-browser .npc-name {
+    font-weight:bold;
+    font-size:16px;
+}
+.npc-browser .cr {
+    display: inline-block;
+    width: 55px;
+}
+.npc-browser .size {
+    display: inline-block;
+    width: 75px;
+}
+.npc-browser .type {
+    display: inline-block;
+}
+
+.npc-browser .spacer {
+    display: inline-block;
+    min-width: 5px;
+}
+.npc-browser .spacer-large {
+    display: inline-block;
+    min-width: 15px;
+}

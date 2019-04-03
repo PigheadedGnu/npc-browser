@@ -1,0 +1,196 @@
+<div class="npc-browser">
+    <div class="control-area">
+        <div class="filtercontainer" id="tagfilter">            
+            <input class="" name="textFilter" type="text" value="" data-dtype="String" placeholder="Search Text" title="Right click for guide"/>
+            <div class="hint" style="display:none;">
+                You can search for name or custom attributes. Visit Github..... for instructions.
+            </div>
+            <dl id="sorter">
+                <dt>Sort by:</dt>
+                <dd><select name="sortorder">
+                    <option value="name" selected>Name</option>
+                    <option value="cr">Challange Rating</option>
+                    <option value="size">Size</option>
+                </select></dd>
+            </dl>           
+            <dl id="sizefilter">
+                <dt>Size:</dt>
+                <dd><select class="" name="sizefilter">
+                    <option value="null" selected>-</option>
+                    {{#each sizes as |size id|}}
+                        <option value="{{id}}">{{size.label}}</option>
+                    {{/each}}
+                </select></dd>
+            </dl>           
+            <dl id="hasSpellsfilter">
+                <dt>Has Spells:</dt>
+                <dd><select class="" name="typefilter">
+                    <option value="null" selected>-</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select></dd>
+            </dl>          
+            <dl id="crfilter">
+                <dt>CR:</dt>
+                <dd>
+                    <select class="small-select" name="crmode">
+                        <option value="null" selected>-</option>
+                        <option value="=">=</option>
+                        <option value="<">&lt;</option>
+                        <option value=">">&gt;</option>
+                    </select>
+                    <input class="small-input" name="crinput">
+                </dd>
+            </dl>          
+            <dl id="isLegendaryfilter">
+                <dt title="Has either Legendary Actions or Resistances">Is Legendary:</dt>
+                <dd>
+                    <select class="" name="legendaryfilter">
+                        <option value="null" selected>-</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </dd>
+            </dl>
+        </div>
+        
+        <div class="filtercontainer" id="abiliyfilter">
+            <h3>Ability</h3>
+            <dl style="display:none;">
+                <dt>Strength:</dt>         
+                <dd>
+                    <select class="small-select" data-ability="str">
+                        <option value="null" selected>-</option>
+                        <option value="=">=</option>
+                        <option value="<">&lt;</option>
+                        <option value=">">&gt;</option>
+                    </select>
+                    <input class="small-input" data-ability="str">
+                </dd>
+                <dt>Dexterity:</dt>           
+                <dd>
+                    <select class="small-select" data-ability="dex">
+                        <option value="null" selected>-</option>
+                        <option value="=">=</option>
+                        <option value="<">&lt;</option>
+                        <option value=">">&gt;</option>
+                    </select>
+                    <input class="small-input" data-ability="dex">
+                </dd>
+                <dt>Constitution:</dt>         
+                <dd>
+                    <select class="small-select" data-ability="con">
+                        <option value="null" selected>-</option>
+                        <option value="=">=</option>
+                        <option value="<">&lt;</option>
+                        <option value=">">&gt;</option>
+                    </select>
+                    <input class="small-input" data-ability="con">
+                </dd>
+                <dt>Intelligence:</dt>           
+                <dd>
+                    <select class="small-select" data-ability="int">
+                        <option value="null" selected>-</option>
+                        <option value="=">=</option>
+                        <option value="<">&lt;</option>
+                        <option value=">">&gt;</option>
+                    </select>
+                    <input class="small-input" data-ability="int">
+                </dd>
+                <dt>Wisdom:</dt>         
+                <dd>
+                    <select class="small-select" data-ability="wis">
+                        <option value="null" selected>-</option>
+                        <option value="=">=</option>
+                        <option value="<">&lt;</option>
+                        <option value=">">&gt;</option>
+                    </select>
+                    <input class="small-input" data-ability="wis">
+                </dd>
+                <dt>Charisma:</dt>           
+                <dd>
+                    <select class="small-select" data-ability="cha">
+                        <option value="null" selected>-</option>
+                        <option value="=">=</option>
+                        <option value="<">&lt;</option>
+                        <option value=">">&gt;</option>
+                    </select>
+                    <input class="small-input" data-ability="cha">
+                </dd>
+            </dl>
+        </div>
+        
+        <div class="filtercontainer" id="dmgtypeinteraction">
+            <h3>Damage Type Interactions</h3>
+            <dl style="display:none;">
+                <dt>Deals Damage</dt>
+                <dd><select class="" data-filter="deals">
+                    <option value="null" selected>-</option>
+                    {{#each damageTypes as |type id|}}
+                        <option value="{{id}}">{{type}}</option>
+                    {{/each}}
+                </select></dd>
+                
+                <dt>Immune</dt>
+                <dd><select class="" data-filter="immune">
+                    <option value="null" selected>-</option>
+                    {{#each damageTypes as |type id|}}
+                        <option value="{{id}}">{{type}}</option>
+                    {{/each}}
+                </select></dd>
+                
+                <dt>Resistance</dt>
+                <dd><select class="" data-filter="resistance">
+                    <option value="null" selected>-</option>
+                    {{#each damageTypes as |type id|}}
+                        <option value="{{id}}">{{type}}</option>
+                    {{/each}}
+                </select></dd>
+                
+                <dt>Vulnerable</dt>
+                <dd><select class="" data-filter="vulnerable">
+                    <option value="null" selected>-</option>
+                    {{#each damageTypes as |type id|}}
+                        <option value="{{id}}">{{type}}</option>
+                    {{/each}}
+                </select></dd>
+            </dl>
+        </div>
+        
+        <div class="filtercontainer" id="typefilter">
+            <h3>Type (including Subtype)</h3>
+            <dl style="display:none;">
+                {{#each types as |type id|}}
+                    <dt><input type="checkbox" data-type="{{type}}"></dt><dd>{{type}}</dd>
+                {{/each}}
+            </dl>
+        </div>
+    </div>
+    <ul>
+        {{#each npcs as |npc id|}}
+        <li class="npc flexrow draggable" data-entry-compendium="{{npc.compendium}}" data-entry-id="{{npc._id}}">
+            <div class="npc-image">
+                <img class="" src="{{npc.img}}" title="{{npc.name}}" width="32" height="32" />
+            </div>
+            <div class="npc-line">
+                <div class="npc-name">
+                    <span class="npc-edit"><a>{{npc.name}}</a></span>
+                </div>
+                <div class="npc-tags">
+                    <span class="cr" title="Challange Rating" title="Challange Rating">CR {{npc.displayCR}}</span>
+                    <span class="size">{{npc.data.data.traits.size.value}}</span>
+                    <span class="type">{{npc.data.data.details.type.value}}</span>
+                </div>
+            </div>
+            
+            <input type="hidden" name="hasSpells" value="{{npc.hasSpells}}">
+            {{#each npc.data.data as |category catid|}}
+            {{#each category as |attrib id|}}
+            <input type="hidden" name="{{catid}}.{{id}}" value="{{attrib.value}}">
+            {{/each}}
+            {{/each}}
+        </li>
+        {{/each}}
+    </ul>
+
+</div>
