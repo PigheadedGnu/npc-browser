@@ -27,6 +27,8 @@ Here you can filter NPCs depending on ceratin damage interactions. You can eithe
 ### Type
 This module analyzes all loaded NPCs to guess their type and subtype that match the following format: `Type (Subtype)`. Any Type or Subtype that has been found is then available to filter, so you can hunt for specific types of monsters.
 
+### Monster Data
+Before you ask, no, this module does not contain any NPCs or data of any kind. It only Works with what is already there
 
 #### Thanks for using this module
 
