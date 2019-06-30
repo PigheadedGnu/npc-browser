@@ -5,6 +5,7 @@ A way to browse compendium NPCs and sort/filter them with various filters.
 1. Download the [npc-browser.zip](https://github.com/syl3r86/npc-browser/raw/master/npc-browser.zip)
 2. Unzip it into FoundryVTT/resources/app/public/modules
 3. Restart Foundry if it was running.
+4. Enable the module in the Module Configuration
 
 ![example](preview.jpg)
 
